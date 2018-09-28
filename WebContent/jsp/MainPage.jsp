@@ -18,8 +18,57 @@
 <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script
 	src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+<script src="dist/wc-motion-chart.js"></script>
+<script src="js/example.js"></script>
+<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 <style type="text/css">
+.side-nav-item {
+	display: block;
+	padding: 10px 15px 10px 15px;
+	background-color: #FFFFFF;
+	cursor: pointer;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.item-title {
+	background-color: #F5F5F5;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.panel-heading {
+	margin-top: 5px;
+	padding: 0;
+	border-radius: 3px;
+	border: 1px solid transparent;
+	border-color: #DDDDDD;
+}
+
+.item-body {
+	padding: 10px 15px 5px 15px;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.item-second {
+	margin-top: 5px;
+	cursor: pointer;
+}
+
+.item-second a {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.at {
+	color: red;
+}
+
 nav ul li {
 	font-size: 20px;
 	margin-top: 10px;
@@ -78,7 +127,8 @@ nav ul li {
 }
 
 .cardEnglish {
-	letter-spacing: 1px; font-size : 15px;
+	letter-spacing: 1px;
+	font-size: 15px;
 	color: white;
 	margin-left: 20px;
 	font-size: 15px;
@@ -88,7 +138,8 @@ nav ul li {
 	color: white;
 	margin-left: 20px;
 }
-.backText{
+
+.backText {
 	font-size: 30px;
 	line-height: 160px;
 	text-align: center;
@@ -96,29 +147,39 @@ nav ul li {
 }
 </style>
 </head>
-
 <script>
-	(function(T, h, i, n, k, P, a, g, e) {
-		g = function() {
-			P = h.createElement(i);
-			a = h.getElementsByTagName(i)[0];
-			P.src = k;
-			P.charset = "utf-8";
-			P.async = 1;
-			a.parentNode.insertBefore(P, a)
-		};
-		T["ThinkPageWeatherWidgetObject"] = n;
-		T[n] || (T[n] = function() {
-			(T[n].q = T[n].q || []).push(arguments)
-		});
-		T[n].l = +new Date();
-		if (T.attachEvent) {
-			T.attachEvent("onload", g)
-		} else {
-			T.addEventListener("load", g, false)
-		}
-	}(window, document, "script", "tpwidget",
-			"//widget.seniverse.com/widget/chameleon.js"))
+	$(document).ready(function() {
+		var path = window.location.pathname;
+		var regExp = /[\/\.\?]+/;
+		str = path.split(regExp);
+		var node = str.slice(-2, -1);
+		$('#' + node + ' a').addClass('at');
+		$('#' + node).parent().parent().parent().addClass('in');
+	})
+</script>
+<script>
+	(
+			function(T, h, i, n, k, P, a, g, e) {
+				g = function() {
+					P = h.createElement(i);
+					a = h.getElementsByTagName(i)[0];
+					P.src = k;
+					P.charset = "utf-8";
+					P.async = 1;
+					a.parentNode.insertBefore(P, a)
+				};
+				T["ThinkPageWeatherWidgetObject"] = n;
+				T[n] || (T[n] = function() {
+					(T[n].q = T[n].q || []).push(arguments)
+				});
+				T[n].l = +new Date();
+				if (T.attachEvent) {
+					T.attachEvent("onload", g)
+				} else {
+					T.addEventListener("load", g, false)
+				}
+			}(window, document, "script", "tpwidget",
+					"//widget.seniverse.com/widget/chameleon.js"))
 </script>
 <script>
 	tpwidget("init", {
@@ -154,6 +215,7 @@ nav ul li {
 		t = setTimeout(time, 1000); //设定定时器，循环运行     
 	}
 </script>
+
 <body>
 
 	<div id="wrapper" class="toggled">
@@ -164,14 +226,27 @@ nav ul li {
 			id="sidebar-wrapper" role="navigation">
 			<ul class="nav sidebar-nav">
 				<li class="sidebar-brand"><a href="#">好辣火锅管理</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-home"></i> 首页</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-folder"></i> 买单结算</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-file-o"></i> 前台服务</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-cog"></i> 菜品管理</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-bank"></i> 会员管理</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-dropbox"></i> 财务管理</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-twitter"></i> 库存管理</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-twitter"></i> 员工管理</a></li>
+				<li><a href="#"><i class="fa fa-fw fa-home"></i>首页</a></li>
+				<li><a href="#"><i class="fa fa-fw fa-folder"></i>买单结算</a></li>
+				<li><a href="#"><i class="fa fa-fw fa-file-o"></i>前台服务</a></li>
+				<li><a href="#"><i class="fa fa-fw fa-cog"></i>菜品管理</a></li>
+				<li><a href="#"><i class="fa fa-fw fa-bank"></i>会员管理</a></li>
+				<li><a href="#"><i class="fa fa-fw fa-dropbox"></i>财务管理</a></li>
+				<li><a href="#"><i class="fa fa-fw fa-twitter"></i>库存管理</a></li>
+				<li><a href="#item-cangku" id="headcangku" data-toggle="collapse" data-parent="#accordion"><i class="fa fa-fw fa-twitter"></i>人员管理</a></li>
+				<li>
+					<div class="panel-heading panel" style="background-color: black; border: 0">
+						<div id="item-cangku" class="panel-collapse collapse">
+							<div class="item-body">
+								<ul class="list-unstyled">
+									<li class="item-second"><a href="a.html">员工列表</a></li>
+									<li class="item-second"><a href="b.html">添加员工</a></li>
+									<li class="item-second"><a href="b.html">发放薪资</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</li>
 			</ul>
 		</nav>
 		<!-- /#sidebar-wrapper -->
@@ -211,8 +286,8 @@ nav ul li {
 							<div class="film">
 								<div class="face front">
 									<div class="cardContent">
-										<i> <img class="smallIcon" src="img/people.png"></i>
-										<i class="cardChinese">就餐已有</i>
+										<i> <img class="smallIcon" src="img/people.png"></i> <i
+											class="cardChinese">就餐已有</i>
 
 									</div>
 									<div class="cardEnglish">THIS&nbsp;MONTH&nbsp;PLAN</div>
@@ -233,14 +308,13 @@ nav ul li {
 						</div>
 					</li>
 					<li>
-						<div class="summary-card qcontainer" style="background-color:#418BCA; ">
+						<div class="summary-card qcontainer"
+							style="background-color: #418BCA;">
 							<div class="film">
 								<div class="face front">
 									<div class="cardContent">
-										<i>
-											<img class="smallIcon" src="img/birthday.png">
-										</i>
-										<i class="cardChinese">就餐已有</i>
+										<i> <img class="smallIcon" src="img/birthday.png">
+										</i> <i class="cardChinese">就餐已有</i>
 									</div>
 									<div class="cardEnglish">THIS&nbsp;MONTH&nbsp;PLAN</div>
 									<div>
@@ -264,10 +338,8 @@ nav ul li {
 							<div class="film">
 								<div class="face front">
 									<div class="cardContent">
-										<i>
-											<img class="smallIcon" src="img/dollar.png">
-										</i>
-										<i class="cardChinese">就餐已有</i>
+										<i> <img class="smallIcon" src="img/dollar.png">
+										</i> <i class="cardChinese">就餐已有</i>
 									</div>
 									<div class="cardEnglish">THIS&nbsp;MONTH&nbsp;PLAN</div>
 									<div>
@@ -292,10 +364,8 @@ nav ul li {
 							<div class="film">
 								<div class="face front">
 									<div class="cardContent">
-										<i>
-											<img class="smallIcon" src="img/eye.png">
-										</i>
-										<i class="cardChinese">就餐已有</i>
+										<i> <img class="smallIcon" src="img/eye.png">
+										</i> <i class="cardChinese">就餐已有</i>
 									</div>
 									<div class="cardEnglish">THIS&nbsp;MONTH&nbsp;PLAN</div>
 									<div>
@@ -317,8 +387,9 @@ nav ul li {
 				</ul>
 			</div>
 		</div>
-		<div style="width: 75%; height: 250px; float: left;"></div>
-		<div style="width: 25%; height: 500px; float: right;">
+		<div id="container"
+			style="width: 974.4px; height: 400px; float: left;"></div>
+		<div style="width: 25%; height: 650px; float: right;">
 			<div style="font-size: 20px; text-align: center;">优秀员工展示</div>
 			<div id="myCarousel" class="carousel slide">
 				<!-- 轮播（Carousel）指标 -->
@@ -328,11 +399,11 @@ nav ul li {
 				</ol>
 				<div class="carousel-inner">
 					<div class="item active">
-						<img style="width: 324.8px; height: 394.95px;padding: 20px;"
+						<img style="width: 324.8px; height: 394.95px; padding: 20px;"
 							src="img/enployee2.jpg" alt="First slide">
 					</div>
 					<div class="item">
-						<img style="width: 324.8px; height: 394.95px;padding: 20px;"
+						<img style="width: 324.8px; height: 394.95px; padding: 20px;"
 							src="img/enployee1.jpg" alt="Second slide">
 					</div>
 				</div>
@@ -351,7 +422,7 @@ nav ul li {
 
 		<div style="width: 75%; height: 250px; float: left;">
 			<i
-				style="width: 50%; height: 30px; float: left; border-bottom: 2px dashed;margin-left: 10px;">营业额及订单数</i>
+				style="width: 50%; height: 30px; float: left; border-bottom: 2px dashed; margin-left: 10px;">营业额及订单数</i>
 			<i
 				style="width: 40%; height: 30px; float: right; border-bottom: 2px dashed; margin-right: 50px">主推菜品</i>
 		</div>
@@ -375,12 +446,36 @@ nav ul li {
 
 
 
-	<script src="http://code.jquery.com/jquery-1.12.1.min.js"
-		type="text/javascript"></script>
-	<script src="dist/wc-motion-chart.js"></script>
-	<script src="js/example.js"></script>
-	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-	<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
+
+	<script type="text/javascript">
+		var options = {
+			chart : {
+				type : 'line'
+			},
+			title : {
+				text : '年度总结' // 标题
+			},
+			xAxis : {
+				categories : [ '1', '2', '3', '4', '5', '6', '7', '8', '9',
+						'10', '11', '12' ]
+			// x 轴分类
+			},
+			yAxis : {
+				title : {
+					text : '结算' // y 轴标题
+				}
+			},
+			series : [ { // 数据列
+				name : '小明', // 数据列名
+				data : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+			// 数据
+			}, {
+				name : '小红',
+				data : [ 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
+			} ]
+		};
+		var chart = Highcharts.chart('container', options);
+	</script>
 	<script type="text/javascript">
 		$(function() {
 			$("[data-toggle='popover']").popover();
