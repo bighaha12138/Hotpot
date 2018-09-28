@@ -229,14 +229,64 @@ nav ul li {
 				<li><a href="#"><i class="fa fa-fw fa-home"></i>首页</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-folder"></i>买单结算</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-file-o"></i>前台服务</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-cog"></i>菜品管理</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-bank"></i>会员管理</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-dropbox"></i>财务管理</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-twitter"></i>库存管理</a></li>
-				<li><a href="#item-cangku" id="headcangku" data-toggle="collapse" data-parent="#accordion"><i class="fa fa-fw fa-twitter"></i>人员管理</a></li>
+				<li><a href="#item-food" id="headfood" data-toggle="collapse" data-parent="#accordion"><i class="fa fa-fw fa-cog"></i>菜品管理</a></li>
+				<li>
+				<div class="panel-heading panel" style="background-color: black; border: 0">
+						<div id="item-food" class="panel-collapse collapse">
+							<div class="item-body">
+								<ul class="list-unstyled">
+									<li class="item-second"><a href="a.html">菜品列表</a></li>
+									<li class="item-second"><a href="b.html">添加菜品</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><a href="#item-vip" id="headvip" data-toggle="collapse" data-parent="#accordion"><i class="fa fa-fw fa-bank"></i>会员管理</a></li>
+				<li>
+				<div class="panel-heading panel" style="background-color: black; border: 0">
+						<div id="item-vip" class="panel-collapse collapse">
+							<div class="item-body">
+								<ul class="list-unstyled">
+									<li class="item-second"><a href="a.html">会员列表</a></li>
+									<li class="item-second"><a href="b.html">添加会员</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><a href="#item-instance" id="headinstance" data-toggle="collapse" data-parent="#accordion"><i class="fa fa-fw fa-dropbox"></i>财务管理</a></li>
+				<li>
+				<div class="panel-heading panel" style="background-color: black; border: 0">
+						<div id="item-instance" class="panel-collapse collapse">
+							<div class="item-body">
+								<ul class="list-unstyled">
+									<li class="item-second"><a href="a.html">订单列表</a></li>
+									<li class="item-second"><a href="b.html">日结算</a></li>
+									<li class="item-second"><a href="b.html">总结算</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				
+				</li>
+				<li><a href="#item-store" id="headstore" data-toggle="collapse" data-parent="#accordion"><i class="fa fa-fw fa-twitter"></i>库存管理</a></li>
+				<li>
+				<div class="panel-heading panel" style="background-color: black; border: 0">
+						<div id="item-store" class="panel-collapse collapse">
+							<div class="item-body">
+								<ul class="list-unstyled">
+									<li class="item-second"><a href="a.html">在线订货</a></li>
+									<li class="item-second"><a href="b.html">导入入库单</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><a href="#item-people" id="peopleku" data-toggle="collapse" data-parent="#accordion"><i class="fa fa-fw fa-twitter"></i>人员管理</a></li>
 				<li>
 					<div class="panel-heading panel" style="background-color: black; border: 0">
-						<div id="item-cangku" class="panel-collapse collapse">
+						<div id="item-people" class="panel-collapse collapse">
 							<div class="item-body">
 								<ul class="list-unstyled">
 									<li class="item-second"><a href="a.html">员工列表</a></li>
