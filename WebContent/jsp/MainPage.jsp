@@ -7,55 +7,92 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>好辣火锅管理</title>
+<link rel="stylesheet" href="css/styleRotate.css">
+<link rel="stylesheet"
+	href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"
 	href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/demo.css">
 <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
 <script
 	src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 
 <style type="text/css">
 nav ul li {
 	font-size: 20px;
 	margin-top: 10px;
 }
+
 .top button {
 	float: right;
 	margin-left: 10px;
 }
-.top{
-	clear:both;
+
+.top {
+	clear: both;
 	height: 70px;
 	width: 50%;
 	float: right;
 }
 
-.top #showTime{
+.top #showTime {
 	position: absolute;
 	top: 10px;
 	right: 150px;
 }
-.top .showUser{
-	 position: absolute;
-	 top: 10px;
-	 right: 20px;
+
+.top .showUser {
+	position: absolute;
+	top: 10px;
+	right: 20px;
 }
-.top .showUser img{
+
+.top .showUser img {
 	width: 40px;
 	height: 40px;
 }
+
 .summary .slogan img {
-	margin-left:20px;
+	margin-left: 20px;
 	width: 40px;
 	height: 40px;
 }
-.summary .summary-card{
+
+.summary .summary-card {
 	width: 250px;
 	height: 160px;
 	background-color: white;
 	float: left;
 	margin: 10px 30px 20px 30px;
+}
+
+.smallIcon {
+	width: 50px;
+	height: 50px;
+}
+
+.cardContent {
+	margin: 20px;
+}
+
+.cardEnglish {
+	letter-spacing: 1px; font-size : 15px;
+	color: white;
+	margin-left: 20px;
+	font-size: 15px;
+}
+
+.cardChinese {
+	color: white;
+	margin-left: 20px;
+}
+.backText{
+	font-size: 30px;
+	line-height: 160px;
+	text-align: center;
+	margin-left: 50px;
 }
 </style>
 </head>
@@ -155,48 +192,193 @@ nav ul li {
 		<!-- /#page-content-wrapper -->
 		<div class="top">
 			<div class="showUser">
-				<img src="css/contact.png" /> 张三
+				<img src="img/hotpot.png" /> 张三
 			</div>
 			<label id="showTime"></label>
 			<div id="tp-weather-widget"></div>
 		</div>
-		
-		<div class="summary" style="background-color: blue; width: 100%;height: 250px; float: left;">
-			<div class="slogan"><img src="img/hotpot.png"><i style="font-size: 20px;">首页</i><i style="font-size: 12px; margin-left: 10px;">//好辣火锅店&nbsp;吃的就是火锅&nbsp;吃的就是辣</i></div>
+
+		<div class="summary" style="width: 100%; height: 250px; float: left;">
+			<div class="slogan">
+				<img src="img/hotpot.png"><i style="font-size: 20px;">首页</i><i
+					style="font-size: 12px; margin-left: 10px;">//好辣火锅店&nbsp;吃的就是火锅&nbsp;吃的就是辣</i>
+			</div>
 			<div>
-			<ul style="list-style: none;">
-			<li><div class="summary-card"></div></li>
-			<li><div class="summary-card"></div></li>
-			<li><div class="summary-card"></div></li>
-			<li><div class="summary-card"></div></li>
-			</ul>
+				<ul style="list-style: none;">
+					<li>
+						<div class="summary-card qcontainer"
+							style="background-color: #D9544F;">
+							<div class="film">
+								<div class="face front">
+									<div class="cardContent">
+										<i> <img class="smallIcon" src="img/people.png"></i>
+										<i class="cardChinese">就餐已有</i>
+
+									</div>
+									<div class="cardEnglish">THIS&nbsp;MONTH&nbsp;PLAN</div>
+									<div>
+										<div class="progress" style="width: 200px; margin-left: 20px;">
+											<div class="progress-bar progress-bar-success"
+												role="progressbar" aria-valuenow="60" aria-valuemin="0"
+												aria-valuemax="100" style="width: 90%;">
+												<span class="sr-only">90% 完成（成功）</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="face back">
+									<a class="backText cardEnglish">Check&nbsp;it</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="summary-card qcontainer" style="background-color:#418BCA; ">
+							<div class="film">
+								<div class="face front">
+									<div class="cardContent">
+										<i>
+											<img class="smallIcon" src="img/birthday.png">
+										</i>
+										<i class="cardChinese">就餐已有</i>
+									</div>
+									<div class="cardEnglish">THIS&nbsp;MONTH&nbsp;PLAN</div>
+									<div>
+										<div class="progress" style="width: 200px; margin-left: 20px;">
+											<div class="progress-bar progress-bar-success"
+												role="progressbar" aria-valuenow="60" aria-valuemin="0"
+												aria-valuemax="100" style="width: 90%;">
+												<span class="sr-only">90% 完成（成功）</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="face back">
+									<a class="backText cardEnglish">Check&nbsp;it</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="summary-card qcontainer " style="background: #16A085;">
+							<div class="film">
+								<div class="face front">
+									<div class="cardContent">
+										<i>
+											<img class="smallIcon" src="img/dollar.png">
+										</i>
+										<i class="cardChinese">就餐已有</i>
+									</div>
+									<div class="cardEnglish">THIS&nbsp;MONTH&nbsp;PLAN</div>
+									<div>
+										<div class="progress" style="width: 200px; margin-left: 20px;">
+											<div class="progress-bar progress-bar-success"
+												role="progressbar" aria-valuenow="60" aria-valuemin="0"
+												aria-valuemax="100" style="width: 90%;">
+												<span class="sr-only">90% 完成（成功）</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="face back">
+									<a class="backText cardEnglish">Check&nbsp;it</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+
+						<div class="summary-card qcontainer" style="background: #3F4E62;">
+							<div class="film">
+								<div class="face front">
+									<div class="cardContent">
+										<i>
+											<img class="smallIcon" src="img/eye.png">
+										</i>
+										<i class="cardChinese">就餐已有</i>
+									</div>
+									<div class="cardEnglish">THIS&nbsp;MONTH&nbsp;PLAN</div>
+									<div>
+										<div class="progress" style="width: 200px; margin-left: 20px;">
+											<div class="progress-bar progress-bar-success"
+												role="progressbar" aria-valuenow="60" aria-valuemin="0"
+												aria-valuemax="100" style="width: 90%;">
+												<span class="sr-only">90% 完成（成功）</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="face back">
+									<a class="backText cardEnglish">Check&nbsp;it</a>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
-		<div style="background-color: yellow; width: 75%;height: 250px; float: left;"></div>
-		<div style=" background-color: green; width: 25%;height: 500px; float: right;"></div>
-		<div style="background-color: red; width: 75%;height: 250px; float: left;"></div>
-		
+		<div style="width: 75%; height: 250px; float: left;"></div>
+		<div style="width: 25%; height: 500px; float: right;">
+			<div style="font-size: 20px; text-align: center;">优秀员工展示</div>
+			<div id="myCarousel" class="carousel slide">
+				<!-- 轮播（Carousel）指标 -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="item active">
+						<img style="width: 324.8px; height: 394.95px;padding: 20px;"
+							src="img/enployee2.jpg" alt="First slide">
+					</div>
+					<div class="item">
+						<img style="width: 324.8px; height: 394.95px;padding: 20px;"
+							src="img/enployee1.jpg" alt="Second slide">
+					</div>
+				</div>
+				<!-- 轮播（Carousel）导航 -->
+				<a class="left carousel-control" href="#myCarousel" role="button"
+					data-slide="prev"> <span
+					class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a> <a class="right carousel-control" href="#myCarousel" role="button"
+					data-slide="next"> <span
+					class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+
+		<div style="width: 75%; height: 250px; float: left;">
+			<i
+				style="width: 50%; height: 30px; float: left; border-bottom: 2px dashed;margin-left: 10px;">营业额及订单数</i>
+			<i
+				style="width: 40%; height: 30px; float: right; border-bottom: 2px dashed; margin-right: 50px">主推菜品</i>
+		</div>
+
 
 
 	</div>
 	<!-- /#wrapper -->
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="http://code.jquery.com/jquery-1.12.1.min.js"
+		type="text/javascript"></script>
+	<script src="dist/wc-motion-chart.js"></script>
+	<script src="js/example.js"></script>
 	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 	<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
 	<script type="text/javascript">
@@ -228,9 +410,9 @@ nav ul li {
 								}
 							}
 
-							$('[data-toggle="offcanvas"]').click(function() {
+							/* $('[data-toggle="offcanvas"]').click(function() {
 								$('#wrapper').toggleClass('toggled');
-							});
+							}); */
 						});
 	</script>
 </body>

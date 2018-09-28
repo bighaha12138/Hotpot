@@ -9,7 +9,17 @@
 	<title>好辣火锅管理</title>
 	<link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
 	<link rel="stylesheet" href="css/style.css">
-
+	<link rel="stylesheet" type="text/css" href="css/all.css" />
+	<style type="text/css">
+		.iframe{
+			border:0;
+			height:100px;
+			width:50%;
+			position: absolute;
+			right: 2px;
+			top: 2px;
+		}
+	</style>
 </head>
 <body>
 	
@@ -50,6 +60,10 @@
         </nav>
         <!-- /#sidebar-wrapper -->
 
+
+
+		<iframe class="iframe" src="<%=request.getContextPath() %>/jsp/top.jsp"></iframe>
+		
         <!-- Page Content -->
         <div id="page-content-wrapper">
           <button type="button" class="hamburger is-closed animated fadeInLeft" data-toggle="offcanvas">
