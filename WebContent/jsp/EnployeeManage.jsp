@@ -54,11 +54,8 @@
 	</div>
 	<!-- /#wrapper -->
 
-	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-	<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
 	<script type="text/javascript">
-		$(document)
-				.ready(
+		$(document).ready(
 						function() {
 							var trigger = $('.hamburger'), overlay = $('.overlay'), isClosed = false;
 

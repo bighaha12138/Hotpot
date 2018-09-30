@@ -3,14 +3,13 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
+<base href="<%=request.getContextPath() %>/">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>好辣火锅管理</title>
 <link rel="stylesheet" href="css/styleRotate.css">
 <link rel="stylesheet"
 	href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css"
-	href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/normalize.css" />
 <link rel="stylesheet" type="text/css" href="css/demo.css">
@@ -96,44 +95,7 @@ nav ul li {
 </style>
 </head>
 
-<script>
-	(function(T, h, i, n, k, P, a, g, e) {
-		g = function() {
-			P = h.createElement(i);
-			a = h.getElementsByTagName(i)[0];
-			P.src = k;
-			P.charset = "utf-8";
-			P.async = 1;
-			a.parentNode.insertBefore(P, a)
-		};
-		T["ThinkPageWeatherWidgetObject"] = n;
-		T[n] || (T[n] = function() {
-			(T[n].q = T[n].q || []).push(arguments)
-		});
-		T[n].l = +new Date();
-		if (T.attachEvent) {
-			T.attachEvent("onload", g)
-		} else {
-			T.addEventListener("load", g, false)
-		}
-	}(window, document, "script", "tpwidget",
-			"//widget.seniverse.com/widget/chameleon.js"))
-</script>
-<script>
-	tpwidget("init", {
-		"flavor" : "bubble",
-		"location" : "WX4FBXXFKE4F",
-		"geolocation" : "enabled",
-		"position" : "top-right",
-		"margin" : "0px 400px",
-		"language" : "zh-chs",
-		"unit" : "c",
-		"theme" : "chameleon",
-		"uid" : "U07DCE6B2A",
-		"hash" : "4791f55e83882ca0a76c704f49084434"
-	});
-	tpwidget("show");
-</script>
+
 
 <script type="text/javascript">
 	var t = null;
@@ -159,7 +121,6 @@ nav ul li {
 				<img src="img/hotpot.png" /> 张三
 			</div>
 			<label id="showTime"></label>
-			<div id="tp-weather-widget"></div>
 		</div>
 </body>
 </html>

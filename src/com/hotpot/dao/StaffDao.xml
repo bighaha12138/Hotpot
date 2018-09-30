@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hotpot.dao.StaffDao">
+
+	<select id="getAllStaffInfo" resultType="Staff">
+		select
+		staff_id staffId,staff_position
+		staffPosition,staff_name staffName,staff_sex staffSex,
+		staff_phone staffPhone,staff_password staffPassword,staff_salary staffSalary,is_provided isProvided
+		from
+		tb_staff
+		limit #{0},#{1}
+	</select>
+	
+	<select id="isStaffExist">
+		select 
+		staff_id staffId,staff_position
+		staffPosition,staff_name staffName,staff_sex staffSex,
+		staff_phone staffPhone,staff_password staffPassword,staff_salary staffSalary,is_provided isProvided
+		from tb_staff
+		where staff_name = #{staffName}
+	</select>
+	
+	<update id="getoutSalary" parameterType="int">
+		update tb_staff set is_provided = '1' where staff_id = #{staffId}
+	</update>
+	
+	<select id="allStaffCount" resultType="Long">
+		select count(*) from tb_staff
+	</select>
+	
+	<select id="getStaffById" parameterType="Integer" resultType="Staff">
+		select staff_id staffId,staff_position
+		staffPosition,staff_name staffName,staff_sex staffSex,
+		staff_phone staffPhone,staff_password staffPassword,staff_salary staffSalary,is_provided isProvided
+		from tb_staff where staff_id = #{staffId}
+	</select>
+	
+	<update id="updateStaffInfo" parameterType="Staff">
+		update tb_staff 
+		set staff_position=#{staffPosition},staff_name=#{staffName},staff_sex = #{staffSex},staff_phone=#{staffPhone},
+		staff_password=#{staffPassword},staff_salary=#{staffSalary}
+		where staff_id = #{staffId}
+	</update>
+	
+	<delete id="deleteStaffInfo" parameterType="Int">
+		delete from tb_staff where staff_id=#{staffId}
+	</delete>
+	
+	<insert id="insertStaffInfo" parameterType="Staff">
+		insert into tb_staff(staff_position,staff_name,staff_sex,staff_phone,staff_password,staff_salary) 
+		values(#{staffPosition},#{staffName},#{staffSex},#{staffPhone},#{staffPassword},#{staffSalary})
+	</insert>
+
+
+
+</mapper>

@@ -4,14 +4,13 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
+<base href="<%=request.getContextPath() %>/">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>好辣火锅管理</title>
 <link rel="stylesheet" href="css/styleRotate.css">
 <link rel="stylesheet"
 	href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css"
-	href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/normalize.css" />
 <link rel="stylesheet" type="text/css" href="css/demo.css">
@@ -20,10 +19,6 @@
 	src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
 <script src="dist/wc-motion-chart.js"></script>
-<script src="js/example.js"></script>
-<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>
-<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 <style type="text/css">
 .side-nav-item {
 	display: block;
@@ -195,7 +190,7 @@ nav ul li {
 		"hash" : "4791f55e83882ca0a76c704f49084434"
 	});
 	tpwidget("show");
-</script>
+</script> 
 
 <script type="text/javascript">
 	var t = null;
@@ -289,9 +284,9 @@ nav ul li {
 						<div id="item-people" class="panel-collapse collapse">
 							<div class="item-body">
 								<ul class="list-unstyled">
-									<li class="item-second"><a href="a.html">员工列表</a></li>
-									<li class="item-second"><a href="b.html">添加员工</a></li>
-									<li class="item-second"><a href="b.html">发放薪资</a></li>
+									<li class="item-second"><a href="<%=request.getContextPath() %>/staff/staffList.do">员工列表</a></li>
+									<li class="item-second"><a href="jsp/AddStaff.jsp">添加员工</a></li>
+									<li class="item-second"><a href="staff/staffListwith.do">发放薪资</a></li>
 								</ul>
 							</div>
 						</div>
@@ -320,7 +315,7 @@ nav ul li {
 				<img src="img/hotpot.png" /> 张三
 			</div>
 			<label id="showTime"></label>
-			<div id="tp-weather-widget"></div>
+			<!-- <div id="tp-weather-widget"></div> -->
 		</div>
 
 		<div class="summary" style="width: 100%; height: 250px; float: left;">
@@ -437,8 +432,7 @@ nav ul li {
 				</ul>
 			</div>
 		</div>
-		<div id="container"
-			style="width: 974.4px; height: 400px; float: left;"></div>
+		<div id="container"	style="width: 974.4px; height: 400px; float: left;"></div>
 		<div style="width: 25%; height: 650px; float: right;">
 			<div style="font-size: 20px; text-align: center;">优秀员工展示</div>
 			<div id="myCarousel" class="carousel slide">
