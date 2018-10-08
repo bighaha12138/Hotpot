@@ -224,7 +224,7 @@ tr td {
 				<li class="sidebar-brand"><a href="#">好辣火锅管理</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-home"></i>首页</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-folder"></i>买单结算</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-file-o"></i>前台服务</a></li>
+				<li><a href="table/tableList.do"><i class="fa fa-fw fa-file-o"></i>前台服务</a></li>
 				<li><a href="#item-food" id="headfood" data-toggle="collapse"
 					data-parent="#accordion"><i class="fa fa-fw fa-cog"></i>菜品管理</a></li>
 				<li>
@@ -289,7 +289,7 @@ tr td {
 								<li class="item-second"><a
 									href="<%=request.getContextPath()%>/staff/staffList.do">员工列表</a></li>
 								<li class="item-second"><a href="jsp/AddStaff.jsp">添加员工</a></li>
-								<li class="item-second"><a href="b.html">发放薪资</a></li>
+								<li class="item-second"><a href="staff/staffListwith.do">发放薪资</a></li>
 							</ul>
 						</div>
 					</div>
@@ -349,32 +349,32 @@ tr td {
 
 		<div class="pager">
 			<font size="2">共 ${page.totalPageCount} 页</font> <font size="2">第
-				${page.pageNow} 页</font> <a href="staff/staffList.do?pageNow=1">首页</a>
+				${page.pageNow} 页</font> <a href="staff/staffListwith.do"?pageNow=1">首页</a>
 			<c:choose>
 				<c:when test="${page.pageNow - 1 > 0}">
-					<a href="staff/staffList.do?pageNow=${page.pageNow - 1}">上一页</a>
+					<a href="staff/staffListwith.do?pageNow=${page.pageNow - 1}">上一页</a>
 				</c:when>
 				<c:when test="${page.pageNow - 1 <= 0}">
-					<a href="staff/staffList.do?pageNow=1">上一页</a>
+					<a href="staff/staffListwith.do?pageNow=1">上一页</a>
 				</c:when>
 			</c:choose>
 			<c:choose>
 				<c:when test="${page.totalPageCount==0}">
-					<a href="staff/staffList.do?pageNow=${page.pageNow}">下一页</a>
+					<a href="staff/staffListwith.d?pageNow=${page.pageNow}">下一页</a>
 				</c:when>
 				<c:when test="${page.pageNow + 1 < page.totalPageCount}">
-					<a href="staff/staffList.do?pageNow=${page.pageNow + 1}">下一页</a>
+					<a href="staff/staffListwith.do?pageNow=${page.pageNow + 1}">下一页</a>
 				</c:when>
 				<c:when test="${page.pageNow + 1 >= page.totalPageCount}">
-					<a href="staff/staffList.do?pageNow=${page.totalPageCount}">下一页</a>
+					<a href="staff/staffListwith.do?pageNow=${page.totalPageCount}">下一页</a>
 				</c:when>
 			</c:choose>
 			<c:choose>
 				<c:when test="${page.totalPageCount==0}">
-					<a href="staff/staffList.do?pageNow=${page.pageNow}">尾页</a>
+					<a href="staff/staffListwith.do?pageNow=${page.pageNow}">尾页</a>
 				</c:when>
 				<c:otherwise>
-					<a href="staff/staffList.do?pageNow=${page.totalPageCount}">尾页</a>
+					<a href="staff/staffListwith.do?pageNow=${page.totalPageCount}">尾页</a>
 				</c:otherwise>
 			</c:choose>
 		</div>
@@ -415,6 +415,7 @@ tr td {
 								$('#wrapper').toggleClass('toggled');
 							}); */
 						});
+		
 		 function provideSalary(id) {
 			 if (confirm('确认为其发放工资')) {
 			$.post("staff/getout.do",{"id":id},function(data){

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hotpot.dao.TableDao">
+
+	<select id="getAllTables" resultType="Table">
+		select fo_id foId,tableNum,fo_tableName tableName,fo_acceptableNum acceptableNum,fo_status status
+		from tb_table
+		limit #{0},#{1}
+	</select>
+	
+	<select id="allTableCount" resultType="Integer">
+		select count(*) from tb_table
+	</select>
+	
+	<update id="changeStatusToUsing" parameterType="Integer">
+		update tb_table set fo_status = 1 where fo_id = #{foId}
+	</update>
+	
+	<update id="changeStatusToUsed" parameterType="Integer">
+		update tb_table set fo_status = 0 where fo_id = #{foId}
+	</update>
+
+</mapper>

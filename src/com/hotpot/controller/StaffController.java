@@ -55,6 +55,7 @@ public class StaffController {
 		mv.setViewName("StaffManage");
 		return mv;
 	}
+	
 	@RequestMapping("/staffListwith.do")
 	public ModelAndView staffListwith(Model model,HttpServletRequest request){
 		String pageNow = request.getParameter("pageNow");

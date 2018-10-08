@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hotpot.dao.FoodDao">
+
+	<select id="getAllFoods" resultType="Food">
+		select food_id
+		foodId,food_pic foodPic,food_name
+		foodName,sellPrice,stock
+		foodStock,food_status foodStatus from
+		tb_food
+
+	</select>
+
+	<select id="allFoodCount" resultType="Integer">
+		select count(*) from
+		tb_food
+	</select>
+
+	
+
+</mapper>

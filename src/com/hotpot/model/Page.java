@@ -28,7 +28,6 @@ public class Page implements Serializable {
 	public int  getTotalPageCount() {
 		totalPageCount = getTotalCount()/getPageSize();
 		return (totalCount/pageSize == 0)?totalPageCount:totalPageCount+1;
-		
 	}
 	
 	public void setTotalPageCount(int totalPageCount) {

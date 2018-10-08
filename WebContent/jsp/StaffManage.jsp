@@ -224,7 +224,7 @@ tr td {
 				<li class="sidebar-brand"><a href="#">好辣火锅管理</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-home"></i>首页</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-folder"></i>买单结算</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-file-o"></i>前台服务</a></li>
+				<li><a href="table/tableList.do"><i class="fa fa-fw fa-file-o"></i>前台服务</a></li>
 				<li><a href="#item-food" id="headfood" data-toggle="collapse"
 					data-parent="#accordion"><i class="fa fa-fw fa-cog"></i>菜品管理</a></li>
 				<li>
@@ -289,7 +289,7 @@ tr td {
 								<li class="item-second"><a
 									href="<%=request.getContextPath()%>/staff/staffList.do">员工列表</a></li>
 								<li class="item-second"><a href="jsp/AddStaff.jsp">添加员工</a></li>
-								<li class="item-second"><a href="b.html">发放薪资</a></li>
+								<li class="item-second"><a href="staff/staffListwith.do">发放薪资</a></li>
 							</ul>
 						</div>
 					</div>
@@ -337,7 +337,7 @@ tr td {
 					<td>${staff.staffPassword }</td>
 					<td>${staff.staffSalary }</td>
 					<td>
-					<a href="#" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#staffEditDialog" onclick= "editStaff(${staff.staffId})">修改</a>
+					<a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#staffEditDialog" onclick= "editStaff(${staff.staffId})">修改</a>
 					<a class="btn btn-danger btn-xs" onclick="deleteStaff(${staff.staffId})">删除</a>
 					</td>
 				</tr>

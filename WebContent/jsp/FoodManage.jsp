@@ -25,7 +25,7 @@
 				<li class="sidebar-brand"><a href="#">好辣火锅管理</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-home"></i> 首页</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-folder"></i> 买单结算</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-file-o"></i> 前台服务</a></li>
+				<li><a href="table/tableList.do""><i class="fa fa-fw fa-file-o"></i> 前台服务</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-cog"></i> 菜品管理</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-bank"></i> 会员管理</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-dropbox"></i> 财务管理</a></li>

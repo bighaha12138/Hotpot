@@ -172,8 +172,9 @@ tr td {
 	right: 2px;
 	top: 2px;
 }
+
 </style>
-<script>
+ <script>
 	(function(T, h, i, n, k, P, a, g, e) {
 		g = function() {
 			P = h.createElement(i);
@@ -223,7 +224,7 @@ tr td {
 				<li class="sidebar-brand"><a href="#">好辣火锅管理</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-home"></i>首页</a></li>
 				<li><a href="#"><i class="fa fa-fw fa-folder"></i>买单结算</a></li>
-				<li><a href="#"><i class="fa fa-fw fa-file-o"></i>前台服务</a></li>
+				<li><a href="table/tableList.do"><i class="fa fa-fw fa-file-o"></i>前台服务</a></li>
 				<li><a href="#item-food" id="headfood" data-toggle="collapse"
 					data-parent="#accordion"><i class="fa fa-fw fa-cog"></i>菜品管理</a></li>
 				<li>
@@ -301,8 +302,8 @@ tr td {
 		<div id="page-content-wrapper">
 			<button type="button" class="hamburger is-closed animated fadeInLeft"
 				data-toggle="offcanvas">
-				<span class="hamb-top"></span> <span class="hamb-middle"></span> <span
-					class="hamb-bottom"></span>
+				<span class="hamb-top"></span> <span class="hamb-middle"></span>
+			    <span class="hamb-bottom"></span>
 			</button>
 			<div class="container">
 				<div class="row">
@@ -314,58 +315,40 @@ tr td {
 		<iframe class="iframe" src="jsp/top.jsp"></iframe>
 	</div>
 	<div class="page-main">
-		<div class="modal-body">
-			<form class="form-horizontal" action="staff/addStaff.do" method="POST">
-				<!-- <input type="hidden" id="edit_staffId" name="staffId" /> -->
-				<div class="form-group">
-					<label for="editStaffPos" class="col-sm-2 control-label">职位</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="edit_staffPos"
-							placeholder="职位名称" name="staffPosition" />
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="editStaffName" class="col-sm-2 control-label">员工姓名</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="edit_staffName"
-							placeholder="员工姓名" name="staffName" />
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="editStaffSex" class="col-sm-2 control-label">性别</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="edit_staffSex"
-							placeholder="性别" name="staffSex" />
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="editStaffPhone" class="col-sm-2 control-label">手机号码</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="edit_staffPhone"
-							placeholder="手机号码" name="staffPhone" />
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="editStaffPass" class="col-sm-2 control-label">员工密码</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="edit_staffPass"
-							placeholder="密码" name="staffPassword" />
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="editStaffSalary" class="col-sm-2 control-label">员工薪资</label>
-					<div class="col-sm-10">
-						<input type="text" class="form-control" id="edit_staffSalary"
-							placeholder="员工薪资" name="staffSalary" />
-					</div>
-				</div>
-				<div class="modal-footer">
-			<input type="submit" class="btn btn-primary" value="添加员工信息"  />
-		</div>
-			</form>
-		</div>
-		
+	<form action="order/addOrder.do" method="post">
+		<table class="table table-bordered">
+			<tr>
+				<th>图片</th>
+				<th>名称</th>
+				<th>售价</th>
+				<th>库存</th>
+				<th>选购数量</th>
+				<th>是否热门</th>
+			</tr>
+
+			<c:forEach var="food" items="${list}">
+				<tr>
+					<td>${food.foodPic }</td>
+					<td>${food.foodName }</td>
+					<td>${food.sellPrice }</td>
+					<td>${food.foodStock }</td>
+					<td><input type="text" placeholder="数量" name="orderNum"/>
+					<input type="hidden" value="${food.foodName }" name="foodName"/>
+					<input type="hidden" value="${food.sellPrice }" name="foodSellPrice"/>
+					<input type="hidden" value="${tableNum }" name="tableNum"/>
+					</td>
+					<td>${food.foodStatus == 1 ?'热门':'非热门'}</td>
+					
+				</tr>
+			</c:forEach>
+			<tr><td colspan="5"><input type="submit" value="提交"/></td></tr>
+		</table>
+</form>
+	
+
 	</div>
+	<!-- /#wrapper -->
+
 
 
 
@@ -399,6 +382,9 @@ tr td {
 								$('#wrapper').toggleClass('toggled');
 							}); */
 						});
+		
+
+		
 	</script>
 </body>
 </html>

@@ -1,7 +1,6 @@
 package com.hotpot.service;
 
 import java.util.List;
-
 import com.hotpot.model.Staff;
 
 public interface StaffService {
@@ -19,4 +18,7 @@ public interface StaffService {
 	public boolean insertStaffInfo(Staff staff);
 	
 	public boolean getoutSalary(Integer id);
+	
+	//public List<TableService> getAllTables();
+	
 }

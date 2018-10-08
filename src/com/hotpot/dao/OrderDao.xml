@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hotpot.dao.OrderDao">
+
+	<insert id="addOrder" parameterType="Order">
+		insert into
+		tb_order(table_num,food_name,food_sellPrice,order_num)
+		values(#{tableNum},#{foodName},#{foodSellPrice},#{orderNum})
+	</insert>
+
+</mapper>
